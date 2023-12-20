@@ -1,0 +1,16 @@
+<div>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Connexion</h2>
+        <form (ngSubmit)="connexion()">
+          <!-- Champ de saisie pour le nom d'utilisateur -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Nom d'utilisateur :</label>
+            <input type="text" class="form-control" id="username" placeholder="Votre nom d'utilisateur" required name="pseudo" [(ngModel)]="this.user.pseudo" 
+            >
+          </div>
+      
+          <!-- Bouton de connexion -->
+          <button type="submit" class="btn btn-primary">Connexion</button>
+        </form>
+      </div>
+</div>
