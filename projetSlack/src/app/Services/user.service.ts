@@ -27,7 +27,6 @@ export class UserService {
     this.http.get().subscribe((data) => {
       this.listUser = data;
       this.listeFilterUser = data;
-      return this.listUser;
     });
   }
 
@@ -50,7 +49,7 @@ export class UserService {
       // Sinon on le créer en bdd, puis on refait un getAll de tous les utilisateurs pour l'enregistrer dans la variable user créer dans ce service 
       if (existingUser) {
         this.user = existingUser;
-        console.log("Utilisateur récupéré : ", this.user);
+        // console.log("Utilisateur récupéré : ", this.user);
       } else {
         userPost.pseudo = user.pseudo;
         this.postUser(userPost).subscribe(() => {
@@ -63,9 +62,9 @@ export class UserService {
 
             if (newUser) {
               this.user = newUser;
-              console.log("Utilisateur créé et récupéré : ", this.user);
+              // console.log("Utilisateur créé et récupéré : ", this.user);
             } else {
-              console.log("Erreur : Utilisateur non trouvé après la création");
+              // console.log("Erreur : Utilisateur non trouvé après la création");
             }
           });
         });

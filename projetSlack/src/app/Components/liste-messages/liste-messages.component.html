@@ -1,1 +1,8 @@
-
+<div class="message-container p-4">
+    <p *ngFor="let message of this.canalService.listeFilterMessage">
+      {{ message.contenuMessage }}
+      {{ message.heureMessage }}
+    </p>
+  </div>
+  
+  <app-add-message></app-add-message>
