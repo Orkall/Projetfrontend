@@ -1,5 +1,8 @@
 #addMessage{
     position:fixed;
     bottom: 2rem;
-width: 75%;
+    width: 75%;
+}
+#buttonadd{
+    background-color: lightgrey;
 }

@@ -1,3 +1,25 @@
+#connexion{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.contenu1{
+    width: 45%;
+}
+.contenu2{
+    width: 55%;
+    display:flex;
+    justify-content: center ;
+    margin: auto;
+}
+#card-connect{
+    width: 29rem;
+}
+#pictureleft{
+    background-size:contain;
+    width: 100%;
+    height: 100vh;
+}
 .custom-card {
     border-radius: 10px;
     padding: 20px;
@@ -10,11 +32,11 @@
   .btn-connexion{
     text-transform: uppercase;
     font-weight: bold;
-    background-color: #278dc0 ;
-    border-color: #278dc0;
+    background-color: #278DC0 ;
+    border-color: #278DC0;
   }
   .card-title{
     text-transform: uppercase;
     font-weight: bold;
-    color: #278dc0;
+    color: #278DC0;
   }
