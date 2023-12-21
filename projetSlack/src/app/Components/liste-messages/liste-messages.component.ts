@@ -36,7 +36,6 @@ export class ListeMessagesComponent implements OnInit {
   ngOnInit(): void {
     if (this.listeFilterMessage.length === 0) {
       this.canalService.getCanalById(1).subscribe((canal) => {
-        // console.log(canal.listContenuMessage);
         this.canalService.getMessageByCanal(canal);
       });
     }

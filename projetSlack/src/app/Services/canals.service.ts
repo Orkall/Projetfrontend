@@ -72,13 +72,30 @@ export class CanalsService {
       if (canal.listContenuMessage && canal.listContenuMessage.length > 0) {
         // Si la liste de messages n'est pas vide, la trier par date
         this.listeFilterMessage = canal.listContenuMessage.sort((a, b) => {
-          const dateStringA = `${a.dateMessage} T ${a.heureMessage}`;
-          const dateStringB = `${b.dateMessage} T ${b.heureMessage}`;
-          console.log('DateString A: ', dateStringA, 'DateString B: ', dateStringB);
+          
+          const date : string[] = a.dateMessage.split(" ");
+          const months : any = {
+            "janvier": "January",
+            "février": "February",
+            "mars": "March",
+            "avril": "April",
+            "mai": "May",
+            "juin": "June",
+            "juillet": "July",
+            "août": "August",
+            "septembre": "September",
+            "octobre": "October",
+            "novembre": "November",
+            "décembre": "December"
+          };
+          
+          let mois = months[date[2]] ;
+          const year : number = new Date().getFullYear();
 
-          const dateA = parse(dateStringA, 'eeee d MMMM T HH:mm', new Date());
-          const dateB = parse(dateStringB, 'eeee d MMMM T HH:mm', new Date());
-          console.log('Parsed Date A:', dateA, 'Parsed Date B:', dateB);
+          let dateCompleteA = `${mois} ${date[1]}, ${year}, ${a.heureMessage}`;
+          let dateCompleteB = `${mois} ${date[1]}, ${year}, ${b.heureMessage}`;
+          let dateA : Date = new Date(dateCompleteA);
+          let dateB : Date = new Date(dateCompleteB);
 
           // Tri du plus ancien au moins ancien
           return dateA.getTime() - dateB.getTime();
