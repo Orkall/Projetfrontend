@@ -11,10 +11,26 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
+  getIdUtilisateur: number = 0;
+
   constructor(public data: UserService ) { }
 
   refreshPage(): void {
     location.reload();
   }
-  
+  clickGetIdUtilisateur(){
+    this.getIdUtilisateur = this.data.user.id;
+  }
+  editUser(){
+    this.data.patchUser(this.data.user);
+    this.getIdUtilisateur = 0;
+  }
+  annulerUser(){
+    this.getIdUtilisateur = 0;
+  }
+  desactiverUser(){
+    this.data.deleteUser(this.data.user.id);
+    location.reload();
+  }
 }

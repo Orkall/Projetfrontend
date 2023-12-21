@@ -38,6 +38,19 @@ export class UserService {
     return this.http.post(newUser)
   }
 
+  // Supprimer un canal
+  deleteUser(id: number) {
+    return this.http.delete(id).subscribe(() => {
+      this.getUsers();
+    });
+  }
+  // Update un user
+  patchUser(newUser: User) { 
+    return this.http.patch(newUser).subscribe(() => {
+      this.getUsers();
+    });
+  }
+
   getUserConnexion(user : User, userPost : UserPost) {
     // Récupérer tous les utilisateurs en bdd
     this.getUserList().subscribe((users: User[]) => {

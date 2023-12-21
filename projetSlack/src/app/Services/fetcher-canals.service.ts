@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Canal } from '../Models/Canal.model';
 import { CanalPost } from '../Models/CanalPost.model';
+import { CanalUpdate } from '../Models/CanalUpdate.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,8 @@ export class FetcherCanalsService {
     return this.http.delete('http://localhost:8080/canals/' + id);
   }
 
-  update(canal: Canal) {
-    return this.http.put('http://localhost:8080/messages/' + canal.id, canal);
+  patch(canal: CanalUpdate) {
+    console.log(canal);
+    return this.http.patch('http://localhost:8080/canals/' + canal.id, canal);
   }
 }

@@ -26,7 +26,7 @@ export class FetcherUserService {
     return this.http.delete('http://localhost:8080/utilisateurs/' + id);
   }
 
-  update(user: User) {
-    return this.http.put('http://localhost:8080/utilisateurs/' + user.id, user);
+  patch(user: User) {
+    return this.http.patch('http://localhost:8080/utilisateurs/' + user.id, user);
   }
 }

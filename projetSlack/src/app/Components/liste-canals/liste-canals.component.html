@@ -1,11 +1,18 @@
 
 <div *ngFor="let canal of this.canalService.listCanals">
   <div id="hoversider" class="d-flex align-items-center">
-    <p class="nom_canal me-2 mb-0" (click)="clickCanal(canal)">{{ canal.nomCanal }}</p>
-    <button *ngIf="canal.id !== 1" type="button" (click)="deleteCanal(canal)">
+    <p *ngIf="this.idCanal !== canal.id" class="nom_canal me-2 mb-0" (click)="clickCanal(canal)">{{ canal.nomCanal }}</p>
+    <button *ngIf="canal.id !== 1 && this.idCanal !== canal.id" type="button" (click)="deleteCanal(canal)">
       <i class="bi bi-x"></i>
     </button>
+    
+    <button *ngIf="canal.id !== 1 &&  this.idCanal !== canal.id" type="button" (click)="clickEditNomCanal(canal)">
+      <i class="bi bi-pencil"></i>
+    </button>
 
-   
+    <input *ngIf="canal.id !== 1 && this.idCanal === canal.id" type="text" [(ngModel)]="canal.nomCanal"/>
+    <button *ngIf="canal.id !== 1 && this.idCanal  === canal.id" type="button" (click)="editCanal(canal)">Enregistrer</button>
+    <button *ngIf="canal.id !== 1 && this.idCanal  === canal.id" type="button" (click)="annulerCanal()">Annuler</button>
   </div>
+    
 </div>
