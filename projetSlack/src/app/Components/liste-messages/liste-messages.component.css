@@ -2,6 +2,7 @@
   max-height: 700px;
   overflow-y: auto;
 }
+
 .dropdown-toggle{
   color: white;
   background-color: transparent;
@@ -10,3 +11,12 @@
 .ligne_message:hover{
   background-color: #848da0;
 }
+
+p{
+  border: 0.5px solid lightgrey;
+    padding: 1rem;
+    border-radius: 5rem;
+    box-shadow: 5px 6px 7px 1px lightgrey;
+}
+
+
