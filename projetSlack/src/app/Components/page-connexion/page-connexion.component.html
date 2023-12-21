@@ -10,7 +10,7 @@
           <img src="assets/images/logo.png" alt="Image de connexion" class="img-fluid mb-4">
         </div>
         <h4 class="card-title mb-4 text-center">Se connecter</h4>
-        <form (ngSubmit)="connexion()">
+        <form id="formconnect" (ngSubmit)="connexion()">
           <!-- Champ de saisie pour le nom d'utilisateur -->
           <div class="mb-3">
             <label for="username" class="card-text form-label">Nom d'utilisateur :</label>
@@ -18,7 +18,7 @@
           </div>
   
           <!-- Bouton de connexion -->
-          <button type="submit" class="btn-connexion btn btn-primary">Connexion</button>
+          <button id="buttonconnexion" type="submit" class="btn-connexion btn btn-primary">Connexion</button>
         </form>
       </div>
     </div>
