@@ -15,12 +15,10 @@ export class ListeCanalsComponent {
 
   constructor(public canalService: CanalsService) { }
 
-
   clickCanal(canal: Canal) {
     this.canalService.getMessageByCanal(canal);
   }
   deleteCanal(canal: Canal) {
-    console.log(canal.id)
     this.canalService.deleteCanal(canal.id);
   }
 }

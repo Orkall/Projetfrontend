@@ -25,8 +25,6 @@ export class AddCanalComponent {
   constructor(public canalService: CanalsService) { }
 
   addCanal() {
-    console.log("fdf");
-    console.log(this.canalPost);
     this.canalService.postCanal(this.canalPost);
 
     // Remettre a vide pour vider le input

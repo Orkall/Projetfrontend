@@ -30,8 +30,6 @@ export class AddMessageComponent {
     this.message.idUtilisateur = this.userService.user.id;
     this.messageService.postMessage(this.message);
 
-   
-
     this.message = {
       contenuMessage: '',
       idUtilisateur: 0,

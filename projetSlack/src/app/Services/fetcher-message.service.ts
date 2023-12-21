@@ -27,6 +27,6 @@ export class FetcherMessageService {
   }
 
   update(message: Message) {
-    return this.http.put('http://localhost:8080/messages/' + message.id, message);
+    return this.http.patch('http://localhost:8080/messages/' + message.id, message);
   }
 }
