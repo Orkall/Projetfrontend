@@ -1,3 +1,12 @@
-.navblock{
-    color: white;
+.navblock {
+  color: white;
+}
+.btn_deco:hover {
+  cursor: pointer;
+  color: #f22e2e;
+}
+.btn_deco {
+  color: #f22e2e;    
+  font-size: 28px;
+
 }

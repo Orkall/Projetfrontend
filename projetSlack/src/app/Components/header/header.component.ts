@@ -14,5 +14,8 @@ import { FormsModule } from '@angular/forms';
 export class HeaderComponent {
   constructor(public data: UserService ) { }
 
-
+  refreshPage(): void {
+    location.reload();
+  }
+  
 }
