@@ -1,8 +1,32 @@
-<div class="message-container p-4">
+<!-- <div class="message-container p-4">
     <p *ngFor="let message of this.canalService.listeFilterMessage">
       {{ message.contenuMessage }}
       {{ message.heureMessage }}
     </p>
-  </div>
+  </div> -->
   
+  <div class="message-container p-4">
+    <div *ngFor="let message of canalService.listeFilterMessage">
+      <div class="ligne_message d-flex justify-content-between align-items-center">
+          <p *ngIf="this.messageToUpdate.id !== message.id"> {{ message.pseudoUtilisateur }} {{ message.contenuMessage }} {{ message.heureMessage }}</p>
+          <div *ngIf="messageToUpdate && this.messageToUpdate.id === message.id" class="d-flex">
+            <input type="text" [(ngModel)]="this.messageToUpdate.contenuMessage" class="form-control me-2" />
+            <button class="btn btn-primary" (click)="updateMessage()">Modifier</button>
+            <button class="btn btn-secondary" (click)="annulerUpdateMessage()">Annuler</button>
+          </div>
+          <div *ngIf="this.messageToUpdate.id === 0" class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              &#8942; 
+            </button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" (click)="patchMessage(message)">Modifier</button>
+              <button class="dropdown-item" (click)="deleteMessage(message.id)">Supprimer</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
   <app-add-message></app-add-message>

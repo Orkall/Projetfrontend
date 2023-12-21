@@ -39,4 +39,17 @@ export class MessageService {
       });
     })
   }
+    // Modifier un message
+    patchMessage(newMessage: Message) {
+      return this.http.update(newMessage).subscribe(() => {
+        this.getMessage();
+        this.canalService.getMessageByCanal(this.canalService.canal)
+        
+      });
+    }
+  
+   // Supprimer un message
+   deleteMessage(id: number) {
+    return this.http.delete(id);
+  }
 }
