@@ -2,13 +2,14 @@
   max-height: 700px;
   overflow-y: auto;
 }
+.ligne_message{
+  margin-bottom: 1rem;
+}
 .ligne_message:hover{
   margin-top: 1rem;
   margin-bottom: 1rem;
   background-color: lightgrey;
-
   border-radius: 2rem;
-  box-shadow: 5px 6px 7px 1px lightgrey;
 }
 
 .dropdown-toggle{
@@ -20,14 +21,45 @@
 
 p{
   border: 0.5px solid lightgrey;
+  position: relative;
     padding: 1rem;
     border-radius: 5rem;
     width: 80%;
     box-shadow: 5px 6px 7px 1px lightgrey;
 }
 
+#buttonupdate{
+  background-color: #49D9A2;
+  color: #112867;
+  margin-right: 1rem;
+}
+#buttondelete{
+  background-color: #112867;
+  color: #49D9A2;
+}
 
 p:hover{
   border: 0.5px solid transparent !important;
   background-color: lightgrey;
+}
+.dropcustom:active{
+  background-color:#49D9A2;
+  color: #112867;
+}
+.dropcustoms:active{
+  background-color:#DE1820;
+  color: #fff;
+}
+#pseudoUtilisateur{
+  position: absolute;
+  color: #49D9A2;
+  top: 0.2rem;
+  font-size: 0.8rem;
+}
+
+#heureMessage{
+  position: absolute;
+    right: 1.5rem;
+    top: 0.5rem;
+    font-size: 0.8rem;
 }

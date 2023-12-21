@@ -1,5 +1,6 @@
 .navblock {
-  color: white;
+  color: #112564;
+  background-color: lightblue;
 }
 .btn_deco:hover {
   cursor: pointer;
@@ -9,4 +10,7 @@
   color: #f22e2e;    
   font-size: 28px;
 
+}
+#searchbutton{
+  background-color: #49DAA2;
 }

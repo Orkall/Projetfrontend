@@ -2,6 +2,9 @@
     margin-bottom: 2rem;
 }
 #buttonAdd{
-    background-color: lightgrey;
-    border  : 1px solid lightgrey;
+    background-color: #49D9A2;
+    border  : 1px solid #49D9A2;
+}
+.bi.bi-plus{
+    color: #112867;
 }
