@@ -1,6 +1,13 @@
 .bi {
   font-size: 2rem;
 }
+.bi.bi-pencil{
+  font-size: 1.5rem;
+  
+}
+#editCanal{
+  color: #49D9A2;;
+}
 button {
   background: transparent;
   border: transparent;
