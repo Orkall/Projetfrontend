@@ -1,52 +1,67 @@
-#connexion{
+#connexion {
     display: flex;
     flex-direction: row;
     height: 100vh;
 }
-.contenu1{
+
+.contenu1 {
     width: 45%;
 }
-.contenu2{
+
+.contenu2 {
     width: 55%;
-    display:flex;
-    justify-content: center ;
+    display: flex;
+    justify-content: center;
     margin: auto;
 }
-#card-connect{
+
+#card-connect {
     width: 29rem;
 }
-#pictureleft{
-    background-size:contain;
+
+#pictureleft {
+    background-size: contain;
     width: 100%;
     height: 100vh;
 }
+
 .custom-card {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  }
-  .card{
+}
+
+.card {
     text-transform: uppercase;
     font-weight: bold;
-  }
-  .btn-connexion{
+}
+
+.btn-connexion {
     text-transform: uppercase;
     font-weight: bold;
-    background-color: #278DC0 ;
+    background-color: #278DC0;
     border-color: #278DC0;
-  }
-  .card-title{
+}
+
+.card-title {
     text-transform: uppercase;
     font-weight: bold;
     color: #278DC0;
-  }
-  #buttonconnexion{
+}
+
+#buttonconnexion {
     position: absolute;
     bottom: 1.5rem;
     right: 2.5rem;
-  }
- #formconnect{
+}
 
-margin-bottom: 3rem !important;
- }
-  
+#formconnect {
+    margin-bottom: 3rem !important;
+}
+@media (max-width: 1100px) {
+    .contenu1{
+        display: none;
+    }
+
+
+}

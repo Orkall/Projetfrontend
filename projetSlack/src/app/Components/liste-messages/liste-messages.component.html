@@ -1,7 +1,7 @@
   <div class="message-container p-4">
     <div *ngFor="let message of canalService.listeFilterMessage">
       <div class="ligne_message d-flex justify-content-between align-items-center">
-          <p *ngIf="this.messageToUpdate.id !== message.id"> <span id="pseudoUtilisateur">{{ message.pseudoUtilisateur }} </span> <span id="contenuMessage">{{ message.contenuMessage }} </span><span id="heureMessage">{{ message.heureMessage }}</span></p>
+          <p *ngIf="this.messageToUpdate.id !== message.id"> <span id="pseudoUtilisateur">{{ message.pseudoUtilisateur }} </span> <span id="contenuMessage">{{ message.contenuMessage }} </span><span id="heureMessage">{{ message.heureMessage }}</span><span id="dateMessage">{{ message.dateMessage }}</span></p>
           <div *ngIf="messageToUpdate && this.messageToUpdate.id === message.id" class="d-flex">
             <input type="text" [(ngModel)]="this.messageToUpdate.contenuMessage" class="form-control me-2" />
             <button id="buttonupdate" class="btn" (click)="updateMessage()">Modifier</button>

@@ -63,3 +63,10 @@ p:hover{
     top: 0.5rem;
     font-size: 0.8rem;
 }
+#dateMessage{
+  position: absolute;
+    left: 50%;
+    font-size: 0.7rem;
+    font-style: italic;
+    top: -1.1rem;
+}
