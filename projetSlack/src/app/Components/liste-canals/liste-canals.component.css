@@ -10,3 +10,8 @@ button {
 .nom_canal:hover {
   cursor: pointer;
 }
+#hoversider:hover{
+background-color: #fff;
+padding: 0.25rem;
+color:#112867;
+}
