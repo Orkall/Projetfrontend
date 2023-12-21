@@ -67,45 +67,45 @@ export class CanalsService {
   }
 
   getMessageByCanal(canal: Canal) {
-    // Faire le filtrer qui affiche les message par canal
     this.getCanalById(canal.id).subscribe((canal) => {
       if (canal.listContenuMessage && canal.listContenuMessage.length > 0) {
         // Si la liste de messages n'est pas vide, la trier par date
         this.listeFilterMessage = canal.listContenuMessage.sort((a, b) => {
-          
-          const date : string[] = a.dateMessage.split(" ");
-          const months : any = {
-            "janvier": "January",
-            "février": "February",
-            "mars": "March",
-            "avril": "April",
-            "mai": "May",
-            "juin": "June",
-            "juillet": "July",
-            "août": "August",
-            "septembre": "September",
-            "octobre": "October",
-            "novembre": "November",
-            "décembre": "December"
-          };
-          
-          let mois = months[date[2]] ;
-          const year : number = new Date().getFullYear();
-
-          let dateCompleteA = `${mois} ${date[1]}, ${year}, ${a.heureMessage}`;
-          let dateCompleteB = `${mois} ${date[1]}, ${year}, ${b.heureMessage}`;
-          let dateA : Date = new Date(dateCompleteA);
-          let dateB : Date = new Date(dateCompleteB);
-
+          const dateA = this.parseDateString(a.dateMessage, a.heureMessage);
+          const dateB = this.parseDateString(b.dateMessage, b.heureMessage);
+  
+          console.log(dateA,dateB);
           // Tri du plus ancien au moins ancien
           return dateA.getTime() - dateB.getTime();
         });
-      }
-      else {
+      } else {
         // Si la liste de messages est vide, assigner directement la liste vide
         this.listeFilterMessage = canal.listContenuMessage;
       }
       this.canal = canal;
-    })
+    });
+  }
+  parseDateString(date: string, heure: string): Date {
+    const months: any = {
+      "janvier": "January",
+      "février": "February",
+      "mars": "March",
+      "avril": "April",
+      "mai": "May",
+      "juin": "June",
+      "juillet": "July",
+      "août": "August",
+      "septembre": "September",
+      "octobre": "October",
+      "novembre": "November",
+      "décembre": "December"
+    };
+  
+    const dateParts = date.split(" ");
+    const mois = months[dateParts[2]];
+    const year = new Date().getFullYear();
+  
+    const dateComplete = `${mois} ${dateParts[1]}, ${year}, ${heure}`;
+    return new Date(dateComplete);
   }
 }
