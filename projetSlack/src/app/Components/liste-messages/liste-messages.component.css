@@ -2,11 +2,30 @@
   max-height: 700px;
   overflow-y: auto;
 }
+.ligne_message:hover{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: lightgrey;
+  border-radius: 5rem;
+  box-shadow: 5px 6px 7px 1px lightgrey;
+}
+
 .dropdown-toggle{
-  color: white;
+  color: #000;
   background-color: transparent;
   border: none;
 }
-.ligne_message:hover{
-  background-color: #848da0;
+
+
+p{
+  border: 0.5px solid lightgrey;
+    padding: 1rem;
+    border-radius: 5rem;
+    width: 80%;
+    box-shadow: 5px 6px 7px 1px lightgrey;
+}
+
+
+p:hover{
+  background-color: lightgrey;
 }

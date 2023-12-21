@@ -2,3 +2,6 @@
     color: white;
     background-color: #36393f;
 }
+nav{
+    height: calc(100vh - 5.4rem) ;
+}

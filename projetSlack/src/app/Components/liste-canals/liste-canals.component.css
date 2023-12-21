@@ -1,0 +1,9 @@
+.bi{
+    font-size: 2rem;
+}
+button{
+    background: transparent;
+    border: transparent;
+    color: red;
+    cursor: pointer;
+}
