@@ -1,9 +1,12 @@
-.bi{
-    font-size: 2rem;
+.bi {
+  font-size: 2rem;
 }
-button{
-    background: transparent;
-    border: transparent;
-    color: red;
-    cursor: pointer;
+button {
+  background: transparent;
+  border: transparent;
+  color: red;
+  cursor: pointer;
+}
+.nom_canal:hover {
+  cursor: pointer;
 }
