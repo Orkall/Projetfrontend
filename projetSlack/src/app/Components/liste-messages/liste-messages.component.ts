@@ -40,6 +40,7 @@ export class ListeMessagesComponent implements OnInit {
       });
     }
   }
+  
   // Gérer l'affichage au clique sur le bouton modifier
   // Affichage du input contenu du message à modifier à la vue (verif ce fait sur l'id du messageToUpdate)
   patchMessage(message: MessageGet) {
@@ -55,6 +56,7 @@ export class ListeMessagesComponent implements OnInit {
       console.log(this.messageToUpdate);
     });
   }
+
   // Effectuer la mise à jour du message
   updateMessage() {
     this.messageService.patchMessage(this.messageToUpdate);
@@ -68,6 +70,7 @@ export class ListeMessagesComponent implements OnInit {
       idCanal: 0
     };
   }
+
   // Supprimer un message
   deleteMessage(id: number) {
     this.messageService.deleteMessage(id).subscribe(() => {
@@ -75,6 +78,7 @@ export class ListeMessagesComponent implements OnInit {
       this.canalService.getMessageByCanal(canal);
     });
   }
+
   // Annuler la mise à jour du message
   annulerUpdateMessage(){
     this.messageToUpdate = {
