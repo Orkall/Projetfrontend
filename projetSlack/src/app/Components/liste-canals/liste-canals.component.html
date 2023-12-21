@@ -2,8 +2,10 @@
 <div *ngFor="let canal of this.canalService.listCanals">
   <div id="hoversider" class="d-flex align-items-center">
     <p class="nom_canal me-2 mb-0" (click)="clickCanal(canal)">{{ canal.nomCanal }}</p>
-    <button type="button" class="" (click)="deleteCanal(canal)">
+    <button *ngIf="canal.id !== 1" type="button" (click)="deleteCanal(canal)">
       <i class="bi bi-x"></i>
     </button>
+
+   
   </div>
 </div>
