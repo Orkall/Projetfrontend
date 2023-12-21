@@ -1,7 +1,7 @@
 import { MessageGet } from "./MessageGet.model";
 
 
-export interface Canal {
+export interface CanalPost {
     id: number;
     estLeGeneral: boolean;
     estActif: boolean;

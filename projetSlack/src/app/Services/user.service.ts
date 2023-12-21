@@ -27,7 +27,6 @@ export class UserService {
     this.http.get().subscribe((data) => {
       this.listUser = data;
       this.listeFilterUser = data;
-      return this.listUser;
     });
   }
 
@@ -40,33 +39,32 @@ export class UserService {
   }
 
   getUserConnexion(user : User, userPost : UserPost) {
-    // if le pseudo existe alors user = userBdd
-    // Sinon appeler le post de l'api
-    // Récupérer la liste des utilisateurs pour voir si l'utilisateur venant d'être créer est bien récupérer
-
-    // Faire un get
+    // Récupérer tous les utilisateurs en bdd
     this.getUserList().subscribe((users: User[]) => {
 
-      // Chercher dedans si le pseudo existe
+      // Chercher dedans si le pseudo existe et le stocker dans la variable existingUser
       const existingUser = users.find(u => u.pseudo === user.pseudo);
 
+      // Si l'utilisateur existe alors on l'enregistre dans la variable user créer dans ce service 
+      // Sinon on le créer en bdd, puis on refait un getAll de tous les utilisateurs pour l'enregistrer dans la variable user créer dans ce service 
       if (existingUser) {
         this.user = existingUser;
-        console.log("Utilisateur récupéré : ", user);
+        // console.log("Utilisateur récupéré : ", this.user);
       } else {
         userPost.pseudo = user.pseudo;
         this.postUser(userPost).subscribe(() => {
 
-          // Maintenant que la requête est terminée, recherchez à nouveau l'utilisateur dans la liste
+          // GetAll Users
           this.getUserList().subscribe((updatedUsers: User[]) => {
+
+            // Chercher dedans si le pseudo existe et le stocker dans la variable newUser
             const newUser = updatedUsers.find(u => u.pseudo === userPost.pseudo);
 
             if (newUser) {
-              // L'utilisateur nouvellement créé a été trouvé, assignez-le à this.user
               this.user = newUser;
-              console.log("Utilisateur créé et récupéré : ", user);
+              // console.log("Utilisateur créé et récupéré : ", this.user);
             } else {
-              console.log("Erreur : Utilisateur non trouvé après la création");
+              // console.log("Erreur : Utilisateur non trouvé après la création");
             }
           });
         });

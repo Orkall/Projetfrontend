@@ -1,1 +1,19 @@
-<p>header works!</p>
+
+<nav class="navblock navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <!-- Logo à gauche -->
+        <img src="assets/images/logo.png" alt="Logo CRM" width="100" height="70">
+  
+      <!-- Barre de recherche au centre -->
+      <form class="d-flex mx-auto">
+        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Rechercher</button>
+      </form>
+  
+      <!-- Informations sur l'utilisateur à droite -->
+      <div class="d-flex align-items-center">
+        <span class="me-2">{{this.data.user.pseudo}}</span>
+        <i class="bi bi-person-circle fs-3"></i>
+      </div>
+    </div>
+  </nav>

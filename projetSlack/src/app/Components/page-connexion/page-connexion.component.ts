@@ -22,7 +22,6 @@ export class PageConnexionComponent {
     pseudo: ''
   };
 
-
   constructor(private userService: UserService) { }
 
   connexion() {
