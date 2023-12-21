@@ -11,8 +11,8 @@
     </button>
 
     <input *ngIf="canal.id !== 1 && this.idCanal === canal.id" type="text" [(ngModel)]="canal.nomCanal"/>
-    <button *ngIf="canal.id !== 1 && this.idCanal  === canal.id" type="button" (click)="editCanal(canal)">Enregistrer</button>
-    <button *ngIf="canal.id !== 1 && this.idCanal  === canal.id" type="button" (click)="annulerCanal()">Annuler</button>
+    <button id="buttonedit" *ngIf="canal.id !== 1 && this.idCanal  === canal.id" type="button" (click)="editCanal(canal)">Enregistrer</button>
+    <button id="buttonannule" *ngIf="canal.id !== 1 && this.idCanal  === canal.id" type="button" (click)="annulerCanal()">Annuler</button>
   </div>
     
 </div>

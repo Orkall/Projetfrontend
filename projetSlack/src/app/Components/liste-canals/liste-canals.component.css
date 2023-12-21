@@ -22,3 +22,20 @@ background-color: #fff;
 padding: 0.25rem;
 color:#112867;
 }
+#buttonedit{
+  background-color: #49D9A2;
+  border: 1px solid transparent;
+  color: #112867;;
+  border-radius: 7px;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  width: 7rem;
+}
+#buttonannule{
+  background-color: red;
+  border: 1px solid transparent;
+  color: #fff;
+  border-radius: 7px;
+  margin-right: 0.5rem;
+  width: 7rem;
+}
