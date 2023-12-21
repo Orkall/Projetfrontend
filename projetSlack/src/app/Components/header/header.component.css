@@ -14,3 +14,43 @@
 #searchbutton{
   background-color: #49DAA2;
 }
+.bi.bi-x{
+  color: red;
+  background-color: transparent;
+  font-size: 2.5rem;
+}
+.bi.bi-pencil
+{
+  color: #49D9A2;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+#utilisateurdelete,#utilisateurget{
+  background-color: transparent;
+  border: transparent;
+}
+#utilisateurinput{
+  border: 1px solid lightblue;
+  border-radius: 5rem;
+  padding-left: 0.8rem;
+  width: 10rem;
+  margin-right: 2rem;
+}
+#buttonedit{
+  background-color: #49D9A2;
+  border: 1px solid transparent;
+  color: #112867;;
+  border-radius: 7px;
+  margin-right: 0.5rem;
+  width: 7rem;
+}
+
+
+#buttonannule{
+  background-color: red;
+  border: 1px solid transparent;
+  color: #fff;
+  border-radius: 7px;
+  margin-right: 0.5rem;
+  width: 7rem;
+}
