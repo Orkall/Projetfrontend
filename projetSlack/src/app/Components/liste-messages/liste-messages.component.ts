@@ -6,7 +6,6 @@ import { AddMessageComponent } from '../add-message/add-message.component';
 import { MessageService } from '../../Services/message.service';
 import { Message } from '../../Models/Message.model';
 import { UserService } from '../../Services/user.service';
-import { User } from '../../Models/User.model';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -44,21 +43,14 @@ export class ListeMessagesComponent implements OnInit {
   // Gérer l'affichage au clique sur le bouton modifier
   // Affichage du input contenu du message à modifier à la vue (verif ce fait sur l'id du messageToUpdate)
   patchMessage(message: MessageGet) {
-    this.userService.getUserList().subscribe((users: User[]) => {
-
-      const existingUser = users.find(u => u.pseudo === message.pseudoUtilisateur);
-
-      if (existingUser) {
-        this.messageToUpdate.idUtilisateur = existingUser.id;
-      }
+      this.messageToUpdate.idUtilisateur = this.userService.user.id;
       this.messageToUpdate.id = message.id;
       this.messageToUpdate.contenuMessage = message.contenuMessage
-      console.log(this.messageToUpdate);
-    });
   }
 
   // Effectuer la mise à jour du message
   updateMessage() {
+    console.log(this.messageToUpdate);
     this.messageService.patchMessage(this.messageToUpdate);
     // Une fois le message missé à jour, on vide le message à modifier
     this.messageToUpdate = {
@@ -72,11 +64,13 @@ export class ListeMessagesComponent implements OnInit {
   }
 
   // Supprimer un message
-  deleteMessage(id: number) {
-    this.messageService.deleteMessage(id).subscribe(() => {
-      let canal = this.canalService.canal;
-      this.canalService.getMessageByCanal(canal);
-    });
+  deleteMessage(message: MessageGet) {
+    if(message.pseudoUtilisateur === this.userService.user.pseudo){
+      this.messageService.deleteMessage(message.id).subscribe(() => {
+        let canal = this.canalService.canal;
+        this.canalService.getMessageByCanal(canal);
+      });
+    }
   }
 
   // Annuler la mise à jour du message
