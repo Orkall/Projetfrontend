@@ -1,20 +1,4 @@
-.custom-card {
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  }
-  .card{
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  .btn-connexion{
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: #278dc0 ;
-    border-color: #278dc0;
-  }
-  .card-title{
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #278dc0;
-  }
+#connexion{
+    display: flex;
+    flex-direction: row;
+}
