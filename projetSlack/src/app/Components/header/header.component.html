@@ -17,6 +17,18 @@
   
       <!-- Informations sur l'utilisateur à droite -->
       <div class="d-flex align-items-center">
+      <button *ngIf="this.getIdUtilisateur === 0" type="button" (click)="desactiverUser()">
+        <i class="bi bi-x"></i>
+      </button>
+        
+        <button *ngIf="this.getIdUtilisateur === 0" type="button" (click)="clickGetIdUtilisateur()">
+          <i class="bi bi-pencil"></i>
+        </button>
+    
+        <input *ngIf="this.getIdUtilisateur !== 0" type="text" [(ngModel)]="this.data.user.pseudo"/>
+        <button *ngIf="this.getIdUtilisateur !== 0" type="button" (click)="editUser()">Enregistrer</button>
+        <button *ngIf="this.getIdUtilisateur !== 0" type="button" (click)="annulerUser()">Annuler</button>
+
         <span class="me-2">{{this.data.user.pseudo}}</span>
         <i class="bi bi-person-circle fs-3 me-4"></i>
         <i class="btn_deco bi bi-box-arrow-right" (click)="refreshPage()"></i>

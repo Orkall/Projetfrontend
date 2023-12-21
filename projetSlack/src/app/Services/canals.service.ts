@@ -5,6 +5,7 @@ import { CanalPost } from '../Models/CanalPost.model';
 import { MessageGet } from '../Models/MessageGet.model';
 import { parse } from 'date-fns';
 import { catchError, throwError } from 'rxjs';
+import { CanalUpdate } from '../Models/CanalUpdate.model';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,14 @@ export class CanalsService {
     return this.http.getById(id);
   }
   postCanal(newCanal: CanalPost) {
-    return this.http.post(newCanal).pipe().subscribe(() => {
+    return this.http.post(newCanal).subscribe(() => {
+      this.getCanal();
+    });
+  }
+
+  // Update un canal
+  patchCanal(newCanal: CanalUpdate) { 
+    return this.http.patch(newCanal).subscribe(() => {
       this.getCanal();
     });
   }
@@ -73,8 +81,7 @@ export class CanalsService {
         this.listeFilterMessage = canal.listContenuMessage.sort((a, b) => {
           const dateA = this.parseDateString(a.dateMessage, a.heureMessage);
           const dateB = this.parseDateString(b.dateMessage, b.heureMessage);
-  
-          console.log(dateA,dateB);
+
           // Tri du plus ancien au moins ancien
           return dateA.getTime() - dateB.getTime();
         });
