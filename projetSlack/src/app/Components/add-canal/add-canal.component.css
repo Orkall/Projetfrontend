@@ -1,3 +1,7 @@
 #inputAddress,#buttonAdd{
     margin-bottom: 2rem;
 }
+#buttonAdd{
+    background-color: lightgrey;
+    border  : 1px solid lightgrey;
+}
