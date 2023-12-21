@@ -40,3 +40,13 @@
     font-weight: bold;
     color: #278DC0;
   }
+  #buttonconnexion{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2.5rem;
+  }
+ #formconnect{
+
+margin-bottom: 3rem !important;
+ }
+  
