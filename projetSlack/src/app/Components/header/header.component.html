@@ -6,14 +6,20 @@
   
       <!-- Barre de recherche au centre -->
       <form class="d-flex mx-auto">
-        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Rechercher</button>
+        <div class="input-group">
+          <input class="form-control" type="search" placeholder="Rechercher..." aria-label="Search">
+          <button class="btn btn-primary" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
       </form>
+  
   
       <!-- Informations sur l'utilisateur à droite -->
       <div class="d-flex align-items-center">
         <span class="me-2">{{this.data.user.pseudo}}</span>
-        <i class="bi bi-person-circle fs-3"></i>
+        <i class="bi bi-person-circle fs-3 me-4"></i>
+        <i class="btn_deco bi bi-box-arrow-right" (click)="refreshPage()"></i>
       </div>
     </div>
   </nav>
